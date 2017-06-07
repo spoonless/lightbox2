@@ -1,6 +1,6 @@
 /* Preload images */
 body:after {
-  content: url(../images/close.png) url(../images/loading.gif) url(../images/prev.png) url(../images/next.png);
+  content: url(../images/close.png) url(../images/open.png) url(../images/loading.gif) url(../images/prev.png) url(../images/next.png);
   display: none;
 }
 
@@ -166,7 +166,6 @@ body.lb-disable-scrolling {
 }
 
 .lb-data .lb-details {
-  width: 85%;
   float: left;
   text-align: left;
   line-height: 1.1em;
@@ -190,12 +189,15 @@ body.lb-disable-scrolling {
   color: #999999;
 }
 
-.lb-data .lb-close {
+.lb-data .lb-closeContainer {
   display: block;
   float: right;
+}
+
+.lb-data .lb-close, .lb-data .lb-open {
+  display: inline-block;
   width: 30px;
-  height: 30px;
-  background: url(../images/close.png) top right no-repeat;
+  height: 20px;
   text-align: right;
   outline: none;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
@@ -206,8 +208,16 @@ body.lb-disable-scrolling {
   transition: opacity 0.2s;
 }
 
-.lb-data .lb-close:hover {
+.lb-data .lb-close:hover, .lb-data .lb-open:hover {
   cursor: pointer;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
   opacity: 1;
+}
+
+.lb-data .lb-close {
+  background: url(../images/close.png) top right no-repeat;
+}
+
+.lb-data .lb-open {
+  background: url(../images/open.png) top right no-repeat;
 }
